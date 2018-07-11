@@ -1,3 +1,15 @@
 {
-  "minifySvg": false
+  "minifySvg": {
+    "plugins": [
+      {
+        "removeViewBox": false
+      },
+      {
+        "collapseGroups": false
+      },
+      {
+        "removeDoctype": true
+      }
+    ]
+  }
 }

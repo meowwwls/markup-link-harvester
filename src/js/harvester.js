@@ -1,5 +1,4 @@
 // matches external links in markup and their link text, if any
-// const linkPattern = /(?<=href=["'])(http[s]?:\/\/(?:w{3}.)?[^-](?:[a-z\d-]{2,67}\.[a-z]{2,}(?:\.\w{2,})?[^"']*))['"]\>([^<]+)?/gi;
 const linkPattern = /(?:href=['"])(http[s]?:\/\/(?:w{3}.)?[^-]?(?:[a-z\d-]{2,67})\.[a-z]{2,}(?:\.\w{2,})?[^"']*)(["'][^>]*>)([^<]+(?=<\/a>))/gi;
 // matches email addresses linked to in markup
 const emailPattern = /\b(?:mailto:)?([^@\."'><]+@[a-z0-9]{2,67}\.[a-z]{2,}(\.[a-z]{2,})?)\b/gi;
@@ -17,11 +16,11 @@ const getMatches = (input, pattern) => {
         matches.push(match[1]);
       }
     } else {
-      // filter out duplicate links and text (duplicate links are fine but not with the same text)
+      // filter out duplicate links and text (duplicate URLS are fine but not with the same text)
       if (
         matches.findIndex(
           item =>
-            item[1] === match[1] &&
+            item[1].toLowerCase() === match[1].toLowerCase() &&
             item[3].toLowerCase() === match[3].toLowerCase()
         ) === -1
       ) {
