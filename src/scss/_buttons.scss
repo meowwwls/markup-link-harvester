@@ -4,12 +4,13 @@ button {
 
 // upload btn
 .upload__btn {
-  border: 2px solid var(--prim-dk);
-  background-color: var(--prim-dk);
+  border: 4px solid var(--prim-lt);
+  background-color: var(--prim-lt);
   color: #fff;
+  color: var(--main-dk);
 
   &:focus {
-    box-shadow: inset 0 0 0 4px var(--prim-ltr);
+    box-shadow: 0 0 0 2px var(--prim-dk);
   }
 
   &:hover {
@@ -17,7 +18,7 @@ button {
     color: var(--main-dk);
 
     .icon {
-      color: var(--prim-dk);
+      transform: translateY(-4px);
     }
   }
 
@@ -26,8 +27,16 @@ button {
     box-shadow: none;
   }
 
+  &:active {
+    transform: none;
+
+    .icon {
+      transform: translateY(2px);
+    }
+  }
+
   .icon {
-    color: var(--prim-ltr);
+    color: var(--prim-dk);
   }
 }
 
@@ -55,5 +64,9 @@ button {
   &:hover {
     background-color: var(--prim-dk);
     color: #fff;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px var(--prim-dk);
   }
 }

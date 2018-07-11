@@ -1,17 +1,15 @@
 // tab list
 .tabs__list {
   display: flex;
-  background-color: var(--prim-lt);
   color: var(--prim-dk);
-
-  @media screen and (min-width: 25em) {
-    color: var(--sec-dk);
-    background-color: transparent;
-  }
 }
 
 .tab {
   padding: 0;
+
+  + .tab {
+    margin-left: 0.5em;
+  }
 }
 
 // tab links
@@ -23,11 +21,9 @@
   display: block;
   position: relative;
   background-color: var(--prim-ltr);
-  // font-weight: bold;
   transition: all 200ms ease-in-out;
 
   @media screen and (min-width: 30em) {
-    // font-weight: 600;
     letter-spacing: 1px;
     font-size: 1.25rem;
   }
@@ -42,7 +38,7 @@
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 2px var(--prim-dk);
+    box-shadow: inset 0 0 0 1px var(--prim-dk);
   }
 
   &::after {
