@@ -24,21 +24,22 @@ form {
 }
 
 .markup__output {
+  // !important to override Grammarly styles
   max-width: 100%;
   margin: 0 0 3rem;
   flex: 1 1 100%;
   resize: none;
   padding: 1.5rem;
-  color: var(--main-dk);
-  line-height: 1.1;
+  color: var(--main-dk) !important;
+  line-height: 1.1 !important;
   font-family: 'Courier New', Courier, monospace;
   border: 2px solid var(--main-dk);
   background-color: var(--transparent);
-  transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out !important;
 
   &:focus {
     border-color: var(--prim-ltr);
-    background-color: var(--prim-ltr);
+    background-color: var(--prim-ltr) !important;
   }
 }
 
