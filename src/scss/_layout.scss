@@ -1,8 +1,11 @@
 main {
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   min-height: 100%;
   max-width: 1200px;
   margin: 0 auto 1.5rem;
+
+  @media screen and (min-width: 30em) {
+    padding: 1.5rem;
+  }
 }

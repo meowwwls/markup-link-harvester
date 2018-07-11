@@ -5,19 +5,19 @@ button {
 // upload btn
 .upload__btn {
   border: 2px solid var(--prim-dk);
-  box-shadow: 0.5em 0.5em 0 var(--prim-dk);
-  color: var(--main-dk);
+  background-color: var(--prim-dk);
+  color: #fff;
 
   &:focus {
-    box-shadow: inset 0 0 0 4px var(--prim-dk);
+    box-shadow: inset 0 0 0 4px var(--prim-ltr);
   }
 
   &:hover {
-    background-color: var(--prim-dk);
-    color: #fff;
+    background-color: var(--transparent);
+    color: var(--main-dk);
 
     .icon {
-      color: #fff;
+      color: var(--prim-dk);
     }
   }
 
@@ -27,7 +27,7 @@ button {
   }
 
   .icon {
-    color: var(--prim-dk);
+    color: var(--prim-ltr);
   }
 }
 
