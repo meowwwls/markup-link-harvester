@@ -1,3 +1,4 @@
 {
-    "lowerCaseAttributeNames": false
+  "lowerCaseAttributeNames": false,
+  "minifySvg": false
 }
