@@ -13,7 +13,7 @@ const createLinkMarkup = linkMatches =>
       link =>
         `<li class="match"><dl>
           <dt>Text</dt><dd>${link.text}</dd>
-          <dt>URL</dt><dd>${link.url}</dd>
+          <dt>URL</dt><dd><a href="${link.url}">${link.url}</a></dd>
           </dl></li>`
     )
     .join('');
@@ -62,8 +62,8 @@ const createHeaderMsgs = (reset, emails = 0, links = 0) => {
   if (reset) {
     msgs.noMk = 'No Markup to Harvest';
   } else {
-    msgs.email = `${emails} Harvested E-mail Links`;
-    msgs.link = `${links} Harvested External Links`;
+    msgs.email = `${emails} Harvested E-mail Link${emails !== 1 ? 's' : ''}`;
+    msgs.link = `${links} Harvested External Link${links !== 1 ? 's' : ''}`;
   }
 
   return msgs;

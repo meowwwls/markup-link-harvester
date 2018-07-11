@@ -13,9 +13,20 @@ const getMatches = (input, pattern) => {
 
   while ((match = pattern.exec(input)) !== null) {
     if (pattern === emailPattern) {
-      matches.push(match[1]);
+      if (!matches.includes(match[1])) {
+        matches.push(match[1]);
+      }
     } else {
-      matches.push(match);
+      // filter out duplicate links and text (duplicate links are fine but not with the same text)
+      if (
+        matches.findIndex(
+          item =>
+            item[1] === match[1] &&
+            item[3].toLowerCase() === match[3].toLowerCase()
+        ) === -1
+      ) {
+        matches.push(match);
+      }
     }
   }
 
