@@ -1,0 +1,53 @@
+form {
+  flex-wrap: wrap;
+  max-width: 45rem;
+  margin: auto;
+
+  @media screen and (min-width: 40em) {
+    padding: 1.5rem;
+  }
+}
+
+.form__ctrls {
+  display: flex;
+  justify-content: space-evenly;
+  letter-spacing: 1px;
+
+  @media screen and (min-width: 30em) {
+    font-size: 1.2em;
+  }
+}
+
+.upload__area {
+  margin-bottom: 3rem;
+  font-family: var(--monospace);
+}
+
+.markup__output {
+  max-width: 100%;
+  margin: 0 0 3rem;
+  flex: 1 1 100%;
+  resize: none;
+  padding: 1.5rem;
+  color: var(--sec-dk);
+  line-height: 1.1;
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid var(--prim-dk);
+  background-color: var(--transparent);
+
+  &:focus {
+    border-color: var(--prim-dk);
+  }
+}
+
+.upload__filename {
+  display: block;
+  font-style: italic;
+  margin-top: 1.25em;
+  margin-left: 1.5em;
+  font-family: 'Courier New', Courier, monospace;
+
+  @media screen and (min-width: 40em) {
+    display: inline-block;
+  }
+}

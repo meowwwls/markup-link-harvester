@@ -1,0 +1,17 @@
+@mixin plain-links($color, $highlight) {
+  padding: 0;
+  box-shadow: 0 2px 0 $highlight;
+  color: $color;
+  transition: all 200ms ease-in-out;
+
+  &:visited {
+    color: $color;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    box-shadow: none;
+    background-color: $highlight;
+  }
+}

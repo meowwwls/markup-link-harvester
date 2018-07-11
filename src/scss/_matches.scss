@@ -1,0 +1,64 @@
+.matches__list {
+  font-size: 1.05em;
+  padding: 0;
+  margin-bottom: 1.5em;
+  font-family: var(--monospace);
+  line-height: 1.5;
+  counter-reset: matches;
+
+  &.valid {
+    background-color: #edffe4;
+    color: #017d30;
+    text-align: center;
+  }
+
+  &.invalid {
+    background-color: #fff1eb;
+    color: #505050;
+  }
+}
+
+.match {
+  counter-increment: matches;
+  position: relative;
+  padding: 0.5em 0.5em 0.5em 1em;
+
+  &::before {
+    position: absolute;
+    left: -0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+    content: counter(matches);
+    font-size: 1.25em;
+    font-family: var(--heading-ff);
+    color: var(--prim-dk);
+  }
+
+  &:nth-child(odd) {
+    background-color: var(--prim-lt);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--prim-ltr);
+  }
+}
+
+dt,
+dd {
+  display: inline;
+  margin: 0;
+}
+
+dd:after {
+  content: '\A';
+  white-space: pre;
+}
+
+dt {
+  font-weight: bold;
+
+  &::after {
+    content: ':';
+    margin-right: 0.25em;
+  }
+}
