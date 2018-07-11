@@ -1,6 +1,6 @@
-@mixin plain-links($color, $highlight) {
+@mixin plain-links($color, $highlight, $underline) {
   padding: 0;
-  box-shadow: 0 2px 0 $highlight;
+  box-shadow: 0 2px 0 $underline;
   color: $color;
   transition: all 200ms ease-in-out;
   line-height: 1.2;
@@ -11,7 +11,7 @@
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: var(--sec-dk);
     box-shadow: none;
     background-color: $highlight;
   }

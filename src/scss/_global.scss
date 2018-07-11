@@ -2,9 +2,10 @@
   --copy: #222;
   --prim-lt: #ffdede;
   --prim-ltr: #ffe9e9;
-  --prim-dk: #ff6464;
+  --main-md: #ff6464;
   --sec-dk: #1d1d1d;
   --main-dk: #111738;
+  --main-md: #234dab;
   --tranparent: rgba(255, 255, 255, 0);
   --heading-ff: 'Fira Sans', sans-serif;
   --monospace: 'Inconsolita', monospace;
@@ -61,7 +62,7 @@ h1 {
 
 h2 {
   font-size: 1.75em;
-  color: var(--prim-dk);
+  color: var(--main-md);
 }
 
 h3 {

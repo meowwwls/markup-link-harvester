@@ -13,7 +13,7 @@ const createLinkMarkup = linkMatches =>
       link =>
         `<li class="match"><dl>
           <dt>Text</dt><dd>${link.text}</dd>
-          <dt>URL</dt><dd><a href="${link.url}">${link.url}</a></dd>
+          <dt>URL</dt><dd>${link.url}</dd>
           </dl></li>`
     )
     .join('');

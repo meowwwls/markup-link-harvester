@@ -1,6 +1,6 @@
 // matches external links in markup and their link text, if any
 // const linkPattern = /(?<=href=["'])(http[s]?:\/\/(?:w{3}.)?[^-](?:[a-z\d-]{2,67}\.[a-z]{2,}(?:\.\w{2,})?[^"']*))['"]\>([^<]+)?/gi;
-const linkPattern = /(?:href=['"])(http[s]?:\/\/(?:w{3}.)?[^-](?:[a-z\d-]{2,67})\.[a-z]{2,}(?:\.\w{2,})?[^"']*)(["'][^>]*>)([^<]+(?=<\/a>))/gi;
+const linkPattern = /(?:href=['"])(http[s]?:\/\/(?:w{3}.)?[^-]?(?:[a-z\d-]{2,67})\.[a-z]{2,}(?:\.\w{2,})?[^"']*)(["'][^>]*>)([^<]+(?=<\/a>))/gi;
 // matches email addresses linked to in markup
 const emailPattern = /\b(?:mailto:)?([^@\."'><]+@[a-z0-9]{2,67}\.[a-z]{2,}(\.[a-z]{2,})?)\b/gi;
 

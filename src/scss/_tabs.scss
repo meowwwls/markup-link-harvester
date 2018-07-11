@@ -1,7 +1,7 @@
 // tab list
 .tabs__list {
   display: flex;
-  color: var(--prim-dk);
+  color: var(--main-md);
 }
 
 .tab {
@@ -28,34 +28,40 @@
     font-size: 1.25rem;
   }
 
-  &:hover {
-    color: var(--prim-dk);
-  }
+  // &:hover {
+  //   color: var(--main-md);
+  // }
 
   &:focus,
   &:hover {
     outline: none;
   }
 
-  &:focus {
-    box-shadow: inset 0 0 0 1px var(--prim-dk);
+  &:focus,
+  &:hover {
+    background-color: var(--main-md);
+    color: var(--prim-ltr) !important;
+
+    &::after {
+      background-color: var(--prim-ltr);
+    }
   }
 
   &::after {
     content: '';
     position: absolute;
     width: 75%;
-    height: 0.15em;
+    height: 0.2em;
     bottom: 0;
     left: 50%;
-    background-color: var(--prim-dk);
+    background-color: var(--main-md);
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 200ms ease-in-out;
   }
 
   &.active {
-    color: var(--prim-dk);
+    color: var(--main-md);
   }
 
   &.active::after {
@@ -72,6 +78,6 @@
   padding: 1.5rem;
 
   a {
-    @include plain-links(var(--sec-dk), var(--prim-dk));
+    @include plain-links(var(--main-dk), var(--prim-lt), var(--main-md));
   }
 }
