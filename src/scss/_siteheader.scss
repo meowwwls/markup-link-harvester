@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+.icon {
+  &--link {
+    color: var(--prim-lt);
+
+    [class^='p'] {
+      transition: transform 250ms;
+    }
+
+    &:hover .p1 {
+      transform: rotate(15deg);
+    }
+
+    &:hover .p2 {
+      transform: rotate(-15deg);
+    }
+  }
+}

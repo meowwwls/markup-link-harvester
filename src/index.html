@@ -4,25 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Extract external links and email links from markup">
   <title>Markup Link Harvester</title>
+  <meta name="twitter:title" content="Markup Link Harvester">
+  <meta name="twitter:creator" content="@meowwwls">
+  <meta name="twitter:description" content=" – Extract external links and email links from markup">
+  <meta name="twitter:image" content="./assets/social.jpg">
+  <meta property="og:url" content="https://markuplinkharvester.netlify.com" />
+  <meta property="og:title" content="Markup Link Harvester" />
+  <meta property="og:image" content="./assets/social.jpg" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="mask-icon" href="./assets/harvest-favicon-mask--min.svg" color="#15268c">
+  <link rel="icon" type="image/svg+xml" href="./assets/harvest-favicon--min.svg">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Fira+Sans:300,400,600" rel="stylesheet">
 </head>
 <body>
   <main>
     <header>
       <h1>Markup
-        <svg xmlns="http://www.w3.org/2000/svg" id="icon-link" width="100" height="100" viewBox="0 0 32 32" aria-hidden="true" class="icon">
-          <path class="g1" d="M13.757 19.868c-0.416 0-0.832-0.159-1.149-0.476-2.973-2.973-2.973-7.81 0-10.783l6-6c1.44-1.44 3.355-2.233 5.392-2.233s3.951 0.793 5.392 2.233c2.973 2.973 2.973 7.81 0 10.783l-2.743 2.743c-0.635 0.635-1.663 0.635-2.298 0s-0.635-1.663 0-2.298l2.743-2.743c1.706-1.706 1.706-4.481 0-6.187-0.826-0.826-1.925-1.281-3.094-1.281s-2.267 0.455-3.094 1.281l-6 6c-1.706 1.706-1.706 4.481 0 6.187 0.635 0.635 0.635 1.663 0 2.298-0.317 0.317-0.733 0.476-1.149 0.476z"></path>
-          <path class="g2" d="M8 31.625c-2.037 0-3.952-0.793-5.392-2.233-2.973-2.973-2.973-7.81 0-10.783l2.743-2.743c0.635-0.635 1.664-0.635 2.298 0s0.635 1.663 0 2.298l-2.743 2.743c-1.706 1.706-1.706 4.481 0 6.187 0.826 0.826 1.925 1.281 3.094 1.281s2.267-0.455 3.094-1.281l6-6c1.706-1.706 1.706-4.481 0-6.187-0.635-0.635-0.635-1.663 0-2.298s1.663-0.635 2.298 0c2.973 2.973 2.973 7.81 0 10.783l-6 6c-1.44 1.44-3.355 2.233-5.392 2.233z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" id="icon-link" width="100" height="100" viewBox="0 0 32 32" aria-hidden="true" class="icon icon--link">
+          <path class="p1" d="M13.757 19.868c-0.416 0-0.832-0.159-1.149-0.476-2.973-2.973-2.973-7.81 0-10.783l6-6c1.44-1.44 3.355-2.233 5.392-2.233s3.951 0.793 5.392 2.233c2.973 2.973 2.973 7.81 0 10.783l-2.743 2.743c-0.635 0.635-1.663 0.635-2.298 0s-0.635-1.663 0-2.298l2.743-2.743c1.706-1.706 1.706-4.481 0-6.187-0.826-0.826-1.925-1.281-3.094-1.281s-2.267 0.455-3.094 1.281l-6 6c-1.706 1.706-1.706 4.481 0 6.187 0.635 0.635 0.635 1.663 0 2.298-0.317 0.317-0.733 0.476-1.149 0.476z"></path>
+          <path class="p2" d="M8 31.625c-2.037 0-3.952-0.793-5.392-2.233-2.973-2.973-2.973-7.81 0-10.783l2.743-2.743c0.635-0.635 1.664-0.635 2.298 0s0.635 1.663 0 2.298l-2.743 2.743c-1.706 1.706-1.706 4.481 0 6.187 0.826 0.826 1.925 1.281 3.094 1.281s2.267-0.455 3.094-1.281l6-6c1.706-1.706 1.706-4.481 0-6.187-0.635-0.635-0.635-1.663 0-2.298s1.663-0.635 2.298 0c2.973 2.973 2.973 7.81 0 10.783l-6 6c-1.44 1.44-3.355 2.233-5.392 2.233z"></path>
       </svg> Link Harvester
       </h1>
     </header>
     <ul id="tabslist" class="tabs__list">
       <li class="tab">
-        <a href="#markup" id="markup-tab" class="tab__link">Markup</a>
+        <a href="#markup" id="markup-tab" class="tab__link">
+          <svg id="icon-code" viewBox="0 0 30 28" aria-hidden="true" class="icon icon--code">
+            <title>code</title>
+            <path d="M9.641 21.859l-0.781 0.781c-0.203 0.203-0.516 0.203-0.719 0l-7.281-7.281c-0.203-0.203-0.203-0.516 0-0.719l7.281-7.281c0.203-0.203 0.516-0.203 0.719 0l0.781 0.781c0.203 0.203 0.203 0.516 0 0.719l-6.141 6.141 6.141 6.141c0.203 0.203 0.203 0.516 0 0.719zM18.875 5.187l-5.828 20.172c-0.078 0.266-0.359 0.422-0.609 0.344l-0.969-0.266c-0.266-0.078-0.422-0.359-0.344-0.625l5.828-20.172c0.078-0.266 0.359-0.422 0.609-0.344l0.969 0.266c0.266 0.078 0.422 0.359 0.344 0.625zM29.141 15.359l-7.281 7.281c-0.203 0.203-0.516 0.203-0.719 0l-0.781-0.781c-0.203-0.203-0.203-0.516 0-0.719l6.141-6.141-6.141-6.141c-0.203-0.203-0.203-0.516 0-0.719l0.781-0.781c0.203-0.203 0.516-0.203 0.719 0l7.281 7.281c0.203 0.203 0.203 0.516 0 0.719z"></path>
+          </svg>
+          <span class="tab__text">Markup</span>
+        </a>
       </li>
       <li class="tab">
-        <a href="#results" id="results-tab" class="tab__link">Results</a>
+        <a href="#results" id="results-tab" class="tab__link">
+          <svg id="icon-list" viewBox="0 0 24 24" aria-hidden="true" class="icon icon--list">
+            <title>list</title>
+            <path d="M8 7h13c0.6 0 1-0.4 1-1s-0.4-1-1-1h-13c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+            <path d="M21 11h-13c-0.6 0-1 0.4-1 1s0.4 1 1 1h13c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+            <path d="M21 17h-13c-0.6 0-1 0.4-1 1s0.4 1 1 1h13c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+            <path d="M2.3 5.3c-0.2 0.2-0.3 0.4-0.3 0.7s0.1 0.5 0.3 0.7c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.2-0.2 0.3-0.4 0.3-0.7s-0.1-0.5-0.3-0.7c-0.4-0.4-1-0.4-1.4 0z"></path>
+            <path d="M2.3 11.3c-0.2 0.2-0.3 0.4-0.3 0.7s0.1 0.5 0.3 0.7c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.2-0.2 0.3-0.4 0.3-0.7s-0.1-0.5-0.3-0.7c-0.4-0.4-1-0.4-1.4 0z"></path>
+            <path d="M2.3 17.3c-0.2 0.2-0.3 0.4-0.3 0.7s0.1 0.5 0.3 0.7c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.2-0.2 0.3-0.4 0.3-0.7s-0.1-0.5-0.3-0.7c-0.4-0.4-1-0.4-1.4 0z"></path>
+          </svg>
+          <span class="tab__text">Results</span>
+        </a>
       </li>
     </ul>
     <section id="markup" class="active">
@@ -31,7 +59,7 @@
       <form id="markup-form" class="form">
         <div class="upload__area">
           <button type="button" id="upload-label" class="upload__btn">
-            <svg xmlns="http://www.w3.org/2000/svg" id="icon-upload" class="icon" width="100" height="100" viewBox="0 0 24 24" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" id="icon-upload" class="icon icon--upload" width="100" height="100" viewBox="0 0 24 24" aria-hidden="true">
               <title>upload</title>
               <path d="M21 14c-0.6 0-1 0.4-1 1v4c0 0.6-0.4 1-1 1h-14c-0.6 0-1-0.4-1-1v-4c0-0.6-0.4-1-1-1s-1 0.4-1 1v4c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-4c0-0.6-0.4-1-1-1z"></path>
               <path d="M7.7 8.7l3.3-3.3v9.6c0 0.6 0.4 1 1 1s1-0.4 1-1v-9.6l3.3 3.3c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5-5c-0.1-0.1-0.2-0.2-0.3-0.2-0.2-0.1-0.5-0.1-0.8 0-0.1 0.1-0.2 0.1-0.3 0.2l-5 5c-0.4 0.4-0.4 1 0 1.4s1 0.4 1.4 0z"></path>
@@ -44,8 +72,14 @@
         </div>
         <textarea name="markup" id="markup-input" cols="100" rows="10" class="markup__output"></textarea>
         <div class="form__ctrls">
-          <button id="reset" type="reset" class="reset__btn">Reset</button>
-          <button id="validate" type="submit" class="validate__btn">Harvest</button>
+          <button id="reset" type="reset" class="reset__btn">
+            <svg id="icon-reset" viewBox="0 0 24 24" aria-hidden="true" class="icon icon--reset">
+              <title>reset</title>
+              <path d="M17.672 6.328l2.344-2.344v7.031h-7.031l3.234-3.234c-1.078-1.078-2.578-1.781-4.219-1.781-3.328 0-6 2.672-6 6s2.672 6 6 6c2.625 0 4.875-1.641 5.672-3.984h2.063c-0.891 3.469-3.984 6-7.734 6-4.406 0-7.969-3.609-7.969-8.016s3.563-8.016 7.969-8.016c2.203 0 4.219 0.891 5.672 2.344z"></path>
+            </svg>
+            Reset
+          </button>
+          <button id="harvest" type="submit" class="harvest__btn">Harvest</button>
         </div>
       </form>
     </section>

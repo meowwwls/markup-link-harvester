@@ -20,6 +20,10 @@
   &:active {
     transform: none;
   }
+
+  .icon {
+    color: var(--main-md);
+  }
 }
 
 button {
@@ -30,24 +34,34 @@ button {
 .upload__btn {
   @extend %primary-btn;
 
-  &:hover {
+  &:hover,
+  &:focus {
     .icon {
       transform: translateY(-4px);
     }
   }
+
   &:active {
-    .icon {
+    .icon--upload {
       transform: translateY(2px);
     }
   }
+}
 
-  .icon {
-    color: var(--main-md);
+// reset btn
+.reset__btn {
+  @extend %primary-btn;
+
+  &:hover,
+  &:focus {
+    .icon {
+      transform: rotate(1turn);
+    }
   }
 }
 
-// validation btn
-.validate__btn {
+// harvest btn
+.harvest__btn {
   flex-grow: 1;
   margin-left: 3rem;
   background-color: var(--main-dk);
@@ -59,9 +73,4 @@ button {
     background-color: var(--transparent);
     color: var(--main-md);
   }
-}
-
-// reset btn
-.reset__btn {
-  @extend %primary-btn;
 }

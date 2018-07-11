@@ -67,6 +67,14 @@
   &.active::after {
     opacity: 1;
   }
+
+  .icon {
+    transition: none;
+  }
+}
+
+.tab__text {
+  vertical-align: middle;
 }
 
 [role='tabpanel'] {

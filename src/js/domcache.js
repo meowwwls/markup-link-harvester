@@ -8,7 +8,7 @@ const textArea = document.getElementById('markup-input');
 const uploadBtn = document.getElementById('upload-label');
 const uploadInput = document.getElementById('markup-upload');
 const fileNameOutput = document.getElementById('current-file');
-const validateBtn = document.getElementById('validate');
+const validateBtn = document.getElementById('harvest');
 
 // results
 const resultsTab = document.getElementById('results-tab');
