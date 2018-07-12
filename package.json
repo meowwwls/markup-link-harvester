@@ -4,8 +4,8 @@
   "description": "Harvest external links and linked email addresses from markup",
   "main": "app.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build ./src/js/app.js -d ./public/dist",
+    "start": "parcel .src/index.html",
+    "build": "parcel build ./src/index.html",
     "test-watch": "jest --watchAll"
   },
   "author": "Melissa Miller (meowwwls)",
